@@ -1,0 +1,5 @@
+aggiornamento appunti git 
+
+git remote -v --> devono uscire due messaggi con (fetch) e (push) se tutto è sincronizzato con il remoto 
+
+quando si fa lo stash è necessario una volta fatto l stash pop ed essere tornati al branch rifare add, perché viene perso 
