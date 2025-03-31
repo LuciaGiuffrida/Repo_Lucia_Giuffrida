@@ -2,4 +2,6 @@ aggiornamento appunti git
 
 git remote -v --> devono uscire due messaggi con (fetch) e (push) se tutto è sincronizzato con il remoto 
 
-quando si fa lo stash è necessario una volta fatto l stash pop ed essere tornati al branch rifare add, perché viene perso 
+quando si fa lo "stash" è necessario una volta fatto lo "stash pop" ed essere tornati al branch rifare add, perché viene perso e non ho più le modifiche nella staging area
+
+git diff "aggiunta app git.txt" --> vedere le modifiche sono state fatte su un file --> a volte faccio delle modifiche ad un file e non riesco a vedere con git status che sono state effettuate, con questo comando poi appaiono e posso fare il push se voglio
