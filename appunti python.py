@@ -4,13 +4,19 @@
 #struttura del ciclo while 
 
 #dictionary
+dict = {
+    "nome": "Lucia",
+    "cognome" : "Giuffrida"
+    #abbiamo coppia chiave (univoca)-valore
+}
 
 #list 
 lista = []
 #tuple
+t = (1, 2, 3)
 #set 
-
-
+s = set()
+s = {1, 2, 3}
 
 
 #CLASSI E OGGETTI
