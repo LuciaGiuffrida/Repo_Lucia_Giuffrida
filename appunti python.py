@@ -146,3 +146,6 @@ def delete(param):
 
 while True:
     start()
+
+#FORMATTAZIONE STRINGHE 
+
