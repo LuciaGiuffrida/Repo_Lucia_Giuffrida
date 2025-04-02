@@ -107,6 +107,42 @@ import datetime
 x = datetime.datetime(2025, 4, 1)
 print(x)
 
-import camelcase
+#import camelcase
 #pip --> package manager: gestore di pacchetti
 
+#TRY and EXPECT 
+
+#INPUT 
+
+persona = {
+    nome : "Lucia",
+    cognome: "Giuffrida",
+    eta: 25
+}
+
+operazioni = ("aggiungere", "eliminare", "modificare" )
+
+def start():
+    operazione = input ("Cosa vuoi fare")
+    if operazione == operazioni[0]: 
+        x = input ("aggiungi chiave:valore separati da una virgola")
+        aggiungi(x.split(",")) #splitta 
+    if operazione == operazioni[1]: 
+        x = input("inserire la chiave che si vuole eliminare")
+    if operazione == operazioni[2]: 
+        pass
+
+def aggiungi(param): #gli sto passando un array
+    chiave = param[0]
+    valore = param[1]
+    persona[chiave]=valore
+    print(persona)
+
+def delete(param):
+    chiave = param
+    delete.persona[chiave]
+    print(persona)
+
+
+while True:
+    start()
