@@ -149,3 +149,7 @@ while True:
 
 #FORMATTAZIONE STRINGHE 
 
+#LAVORARE CON I FILE
+
+f = open("createfile.txt","x")
+
