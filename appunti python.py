@@ -115,9 +115,9 @@ print(x)
 #INPUT 
 
 persona = {
-    nome : "Lucia",
-    cognome: "Giuffrida",
-    eta: 25
+    'nome' : "Lucia",
+    'cognome': "Giuffrida",
+    'eta': 25
 }
 
 operazioni = ("aggiungere", "eliminare", "modificare" )
@@ -125,12 +125,15 @@ operazioni = ("aggiungere", "eliminare", "modificare" )
 def start():
     operazione = input ("Cosa vuoi fare")
     if operazione == operazioni[0]: 
-        x = input ("aggiungi chiave:valore separati da una virgola")
+        x = input ("aggiungi chiave:valore separati da una virgola ")
         aggiungi(x.split(",")) #splitta 
     if operazione == operazioni[1]: 
-        x = input("inserire la chiave che si vuole eliminare")
+        x = input("inserire la chiave che si vuole eliminare ")
+        delete(x)
     if operazione == operazioni[2]: 
-        pass
+        x = input("inserire il chiave:modifica separate da virgola")
+        modifica(x.split(",")) 
+        
 
 def aggiungi(param): #gli sto passando un array
     chiave = param[0]
@@ -139,10 +142,22 @@ def aggiungi(param): #gli sto passando un array
     print(persona)
 
 def delete(param):
+    global persona
     chiave = param
-    delete.persona[chiave]
+    del persona[chiave]
     print(persona)
 
+def modifica(param):
+
+
+    chiave = param[0]
+    valore = param[1]
+    if chiave in persona:
+        persona[chiave]=valore
+        print(persona)
+    else:
+       print("questa chiave non esiste nel dict persona")     
+   
 
 while True:
     start()
