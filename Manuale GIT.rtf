@@ -1,0 +1,191 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww21460\viewh15140\viewkind0
+\deftab20
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab20\partightenfactor0
+
+\f0\b\fs36 \cf2 MANUALE GIT
+\f1\b0 \
+
+\f0\b Clonare una repository gi\'e0 esistente\
+
+\f1\b0 - Mettersi nella cartella dove si vuole clonare la repo\
+- Cd \'93path cartella\'94 \'97> vado nel path indicato\
+- Git clone \'93indirizzo della repo remota\'94\
+\
+
+\f0\b Creare una repository in locale e metterla poi online
+\f1\b0 \
+- Cd \'93path cartella\'94\
+- Git init \'97> dentro la cartella dove voglio creare la repo inizializzo git\
+- Git \'96 version verifico la versione installata di git\
+- Mkdir\
+- Git add nome.estensione\
+- Git commit -m \'93messaggio del commit\'94\
+- Git branch \'97>  comando per vedere i branch che ci sono in locale\
+- Git branch -r \'97>  comando per vedere i branch che ci sono in remoto, non \'e8 detto che\
+coincidano. Pu\'f2 succedere che il branch locale non si veda in remoto, se ho creato la repo a partire dal locale. \
+O viceversa se sto clonando una repo pu\'f2 darsi che io non veda il locale tutti i\
+branch che ho in remoto.\
+\
+\
+- Git branch -a \'97>  visualizzo i branch in locale\
+- Git log \'97> cronologia dei commit che sono stati fatti in locale\
+- Git status\
+- Dir \'97> vedo cosa c\'92\'e8 dentro il path dove sono\
+- Git checkout \'93nome branch dove voglio andare\'94\
+- Git Push origin \'93branch dove e
+\f2 \uc0\u64256 
+\f1 ettuo il push\'94\
+- Git fetch --all \'97> questo comando lo uso quando per esempio ho clonato la repo e in locale\
+non vedo tutti i branch presenti in remoto, per allineare il tutto devo fare questo.\
+- git pull \'97> sinconizza in locale tutte le modifiche che possono essere avvenute in remoto, fare sempre quando si apre la repo \
+- git checkout -b \'93nuovo branch\'94 \'97> va a creare un nuovo branch e mi sposta su quello \
+\
+
+\f0\b Percorso da fare quando apro la repo: 
+\f1\b0 \
+- cd percoso/repo \
+- git status \'97> vedo lo stato attuale \
+- git pull \'97> sincronizzo con il remoto\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab20\partightenfactor0
+\cf2 \
+Quando faccio una 
+\f0\b modifica il locale e la voglio caricare in remoto
+\f1\b0  devo fare il push, ma prima devo\
+stagiare tutti i cambiamenti altrimenti non funziona . Procedimento:\
+- Aprire il terminale\
+- Andare nel path della repo\
+- Git status \'97> verifico se ci sono stati dei cambiamenti, se ci sono file non trackati\
+- Git add filemodificato.estensione \'97> stage dei cambiamenti che sono stati fatti\
+- Git commit -m \'93messaggio\'94\
+- Git push origin branchsucuisono\
+N.B. prima di fare un push devo avere fatto un pull, cio\'e8 la cartella locale deve essere sincronizzata a quella in remoto, ma vedi sotto\'97>\
+\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b \cf0 \expnd0\expndtw0\kerning0
+Quando NON fare subito git pull \'97>
+\f1\b0 Se hai 
+\f0\b modifiche locali non salvate
+\f1\b0  (committate). In questo caso, meglio fare prima:\
+\pard\pardeftab720\partightenfactor0
+\cf0 - git add .\
+- git commit -m "Salvo le mie modifiche locali"\
+- git pull
+\fs26 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab20\partightenfactor0
+
+\fs36 \cf2 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+Fare un 
+\f0\b git pull
+\f1\b0  prima di un 
+\f0\b git push
+\f1\b0  \'e8 una 
+\f0\b buona pratica
+\f1\b0  proprio per evitare problemi di 
+\f0\b branch divergenti
+\f1\b0 .\
+branch divergenti COSA FARE: \
+- Git pull origin main - - rebase \'97> questa operazione pu\'f2 andare a buon fine oppure viene chiesto di risolvere i conflitti manualmente. Se va a buon fine significa che Hai allineato il tuo branch locale con il branch remoto, mantenendo le tue modifiche sopra le modifiche remote. \
+- git push origin main \'97> si pu\'f2 fare il push\
+A questo non avrebbe senso fare un pull. \cf2 \kerning1\expnd0\expndtw0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab20\partightenfactor0
+\cf2  \
+\
+
+\f0\b Cosa fare quando ho dei cambiamenti che non Voglio pushare ma voglio cambiare branch: \
+
+\f1\b0 In questi casi bisogna fare lo stash che sostanzialmente mantiene in maniera tempora i commit che non si vogliono caricare in locale. \
+Ho lavorato su un file ma ora voglio cambiare branch senza perdere le modifiche:\
+- git stash \'97> qui pu\'f2 verificarsi che i file non sono tracciati (per esempio non ho fatto l\'92add). Per includere nello stash i file non tracciati devo fare: \cf0 \expnd0\expndtw0\kerning0
+git stash -u\cf2 \kerning1\expnd0\expndtw0 \
+- git checkout branch \'93dove voglio andare\'94\
+\'97\'97 faccio quello che devo fare \
+- Git checkout main \'97> torno al branch dove avevo stagiato i cambiamenti \
+- git stash pop \
+- git commit -m \'93messaggio\'94\
+- git log \'97> verifico il commit \
+- git push origin main \
+\
+Git stash ha senso se non fai il commit, altrimenti non ha senso. \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab20\pardirnatural\partightenfactor0
+\cf3 \CocoaLigature0 Se il file contiene degli spazi devo usare il backslash \'97>git add SENSOR\\ PCB\\ .rtf \'97> meglio usare le virgolette \'93ciao Lucia.txt\'94. Se \'e8 una cartella non devi indicare l\'92estensione.\
+\cf2 \CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab20\partightenfactor0
+\cf2 \
+Come fare il merge di due branch partendo dalla creazione di uno: \
+- git pull \
+- git checkout main \
+- git checkout -b \'93nuovo branch\'94\
+\'97 \'97 lavoro sul nuovo branch facendo quello che voglio \
+- git checkout main \'97> torno sul branch main \
+- Git pull origin main \'97> mi assicuro che sia aggiornato\
+- git merge \'93branch che voglio unire al main\'94\
+\
+A questo punto il branch main contiene tutto quello che c\'92era dentro il branchprova quindi avrebbe senso eliminarlo per tenere le repo pi\'f9 ordinata: \
+- git checkout main \'97> prima di eliminare un branch mi devo assicurare di essere su un altro branch\
+- git branch -d branchprova \'97> -d elimina il branch solo se le modifiche sono gi\'e0 state mergiate, -D posso forzarlo, meglio non usarlo. Cosi lo elimino solo in locale \
+- git push origin - - delete branchprova \'97> eliminate il branch in remoto \
+- git fetch -p \'97> pulisci i branch locali \
+Perch\'e8 sparisca anche dalla visualizzazione in locale devo eliminarlo in remoto. \
+\
+git remote -v --> devono uscire due messaggi con (fetch) e (push) se tutto \'e8 sincronizzato con il remoto \
+\
+quando si fa lo 
+\f0\b "stash"
+\f1\b0  \'e8 necessario una volta fatto lo 
+\f0\b "stash pop"
+\f1\b0  ed essere tornati al 
+\f0\b branch rifare add,
+\f1\b0  perch\'e9 viene perso e non ho pi\'f9 le modifiche nella staging area\
+\
+git diff "aggiunta app git.txt" --> vedere le modifiche sono state fatte su un file --> a volte faccio delle modifiche ad un file e non riesco a vedere con git status che sono state effettuate, con questo comando poi appaiono e posso fare il push se voglio\
+\
+
+\f0\b i file possono essere creati anche direttamente da terminale, esempio con txt:
+\f1\b0 \
+echo "Creazione file di esempio" > file1.txt\
+git add file1.txt\
+git commit -m "Aggiunto file1.txt"\
+git push origin main\
+\
+se faccio un merge e questo mi genera un conflitto che non riesco o non voglio risolvere, per tornare allo stato precedente --> git merge --abort\
+\
+Quando 
+\f0\b elimino un branch
+\f1\b0 , perch\'e9 non mi serve pi\'f9 devo fare due cose:\
+- eliminazione
+\f0\b  locale 
+\f1\b0 \'97> git branch -d branchprova\
+- eliminazione 
+\f0\b globale
+\f1\b0  \'97> git push origin --delete feature1\
+Verifiche che sia sparito:\
+- git fetch --prune\
+- git branch -r\
+\
+\
+Git init \
+\
+- \cf3 \CocoaLigature0 rm -rf ~/.git\
+\
+Se la repo l\'92ho creata in locale non devo aggiungere il readme quando la creo anche in remoto. \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\CocoaLigature1 git remote add origin https://github.com/tuo-username/tuo-repo.git\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \kerning1\expnd0\expndtw0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab20\partightenfactor0
+\cf2 \
+}
