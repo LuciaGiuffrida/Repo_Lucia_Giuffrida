@@ -20,9 +20,16 @@
 \f0\b Creare una repository in locale e metterla poi online
 \f1\b0 \
 - Cd \'93path cartella\'94\
-- Git init \'97> dentro la cartella dove voglio creare la repo inizializzo git\
-- Git \'96 version verifico la versione installata di git\
-- Mkdir\
+- Mkdir nome_progetto\
+- cd nome_progetto \
+- git init \
+\'97 a questo punto la repo esiste solo in locale\
+Ora vado su git e creo una repo in remoto \
+Adesso collego la repo locale a quella remota \'97> git remote add origin https://github.com/tuo-username/progetto-esempio.git\
+N.B. \'97> prima di effettuare il successivo comando devo fare un push di qualcosa, tipo il file readme:\
+- touch README.md \'97> cosi lo creo \
+git push -u origin main \'97> push della repo locale in remoto \
+\
 - Git add nome.estensione\
 - Git commit -m \'93messaggio del commit\'94\
 - Git branch \'97>  comando per vedere i branch che ci sono in locale\
@@ -31,7 +38,11 @@ coincidano. Pu\'f2 succedere che il branch locale non si veda in remoto, se ho c
 O viceversa se sto clonando una repo pu\'f2 darsi che io non veda il locale tutti i\
 branch che ho in remoto.\
 \
-\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab20\partightenfactor0
+\cf2 (Git init \'97> dentro la cartella dove voglio creare la repo inizializzo git)\
+(Git \'96 version verifico la versione installata di git)\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab20\partightenfactor0
+\cf2 \
 - Git branch -a \'97>  visualizzo i branch in locale\
 - Git log \'97> cronologia dei commit che sono stati fatti in locale\
 - Git status\
@@ -174,8 +185,29 @@ Verifiche che sia sparito:\
 - git branch -r\
 \
 \
-Git init \
+
+\f0\b DIFFERENZA TRA PULL e FETCH \
+
+\f1\b0 \
+- 
+\f0\b fetch
+\f1\b0 :\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1) Scarica gli aggiornamenti dal repository remoto\
+2) NON li unisce (merge) automaticamente nel tuo branch locale\
+3)  \'c8 "safe": ti permette di vedere le modifiche prima di integrarle\
+\'97> git fetch origin: ti fa vedere le differenze tra il tuo branch e quello in remoto\
 \
+- 
+\f0\b pull
+\f1\b0  \
+1) \'c8 un fetch + merge\
+2) Scarica e applica automaticamente le modifiche remote al tuo branch locale\
+3) Comodo ma pu\'f2 causare conflitti se ci sono differenze\
+\'97> git pull origin main: fetch delle modifiche e le unisce al tuo branch locale \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab20\partightenfactor0
+\cf2 \
 - \cf3 \CocoaLigature0 rm -rf ~/.git\
 \
 Se la repo l\'92ho creata in locale non devo aggiungere il readme quando la creo anche in remoto. \
