@@ -168,3 +168,17 @@ while True:
 
 f = open("createfile.txt","x")
 
+
+#REVERT ARRAY 
+#array = [2,3,4,5,6,7,8,9,10]
+#newarray=[]
+
+#def revertarray(array):
+#   global newarray 
+#    newarray = array[::-1]
+#    return array
+
+
+#revertarray(array)
+#print("vecchio array", array)
+#print("nuovo array",newarray)

@@ -91,7 +91,7 @@ int main() {
     *prt_prova=200; 
     std::cout << *prt_prova << std::endl; //cambio il valore contenuto in quell'indirizzo 
 
-    //REFERNZE --> sono alias per le variabili
+    //REFERENZE --> sono alias per le variabili
     //si usa questo concetto all'interno delle funzioni --> mi permette di baypassare lo scope 
     int ref=5;
     int &referenza_ref=ref; //devo subito assegnarla, non posso dichiararla vuota
@@ -123,3 +123,89 @@ do
 
 //il continue nel ciclo for o while serve a saltare quella iterazione, passo all'iterazione successiva
 //il break rompe il ciclo se si verifica una determinata cosa, si esce dal ciclo 
+
+
+/* Reverse array 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cmath> 
+
+int array[10]={ 3, 4 , 6, 7, 9, 8, 12,9, 3, 6 }; 
+int newarray[10]; 
+int dim=0; 
+void revertarray(int array[], int dim);
+//la dimensione devo passarla direttamente, non posso calcolarla dentro perchè viene passato come puntatore l'array,
+//quindi dentro non sono più in di calcolarlo. 
+
+int main (){
+
+    int dim = (sizeof(array)/sizeof(array[0]));
+    revertarray(array, dim); 
+    
+
+    std::cout << "Vecchio array:" << std::endl; 
+    for (int j=0; j<sizeof(array)/sizeof(array[0]); j++){
+
+        std::cout << array[j]; 
+    }
+    std::cout << std::endl; 
+
+    std::cout << "Nuovo array:" << std::endl; 
+    for (int j=0; j < sizeof(array)/sizeof(array[0]); j++){
+
+        std::cout << newarray[j] ; 
+    }
+
+    return 0; 
+}
+
+
+void revertarray(int array[], int dim) {
+
+     
+    for(int i = 0; i< dim; i++ ){
+        newarray[i] = array[dim-i-1]; 
+    }  
+
+}
+
+*/
+
+
+/* SOMMA ELEMENTI ARRAY 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cmath> 
+
+int array[10]={ 3, 4 , 6, 7, 9, 8, 12,9, 3, 6 }; 
+int newarray[10]; 
+int dim=0; 
+int sum(int array[], int dim);
+int somma=0; 
+//la dimensione devo passarla direttamente, non posso calcolarla dentro perchè viene passato come puntatore l'array,
+//quindi dentro non sono più in di calcolarlo. 
+
+int main (){
+
+    int dim = (sizeof(array)/sizeof(array[0]));
+    sum(array, dim); 
+
+    std::cout << "Somma elementi array: " << somma << std::endl; 
+    
+
+    return 0; 
+}
+
+int sum(int array[], int dim) {
+
+    
+    for(int i = 0; i< dim; i++ ){
+        somma += array[i]; 
+    }  
+    return somma; 
+
+}
+
+*/
